@@ -11,7 +11,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:8.0.2'
-        classpath 'com.google.gms:google-services:4.4.0'
+        classpath 'com.google.gms:google-services:4.5.0'
         classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.9'
     }
 }
@@ -74,20 +74,11 @@ allprojects {
     // https://github.com/Giphy/giphy-react-native-sdk/commit/7fe466ed6fddfaec95f9cbc959d33bd75ad8f900
 
     configurations.configureEach {
-        resolutionStrategy {
-            forcedModules = [
-                'com.facebook.fresco:fresco:3.2.0',
-                'com.facebook.fresco:animated-gif:3.2.0',
-                'com.facebook.fresco:animated-base:3.2.0',
-                'com.facebook.fresco:animated-drawable:3.2.0',
-                'com.facebook.fresco:animated-webp:3.2.0',
-                'com.facebook.fresco:webpsupport:3.2.0',
-                'com.facebook.fresco:imagepipeline-okhttp3:3.2.0',
-                'com.facebook.fresco:middleware:3.2.0',
-                'com.facebook.fresco:nativeimagetranscoder:3.2.0'
-            ]
-        }
+    resolutionStrategy {
+        forcedModules = [] // 清空强制模块
     }
+}
+
 
     // Third-party react-native modules which Jitsi Meet SDK for Android depends
     // on and which are not available in third-party Maven repositories need to
